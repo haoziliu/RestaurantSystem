@@ -53,4 +53,5 @@ dependencies {
     api(libs.room.runtime)
     api(libs.room.ktx)
     api(libs.androidx.datastore)
+    implementation(libs.gson)
 }

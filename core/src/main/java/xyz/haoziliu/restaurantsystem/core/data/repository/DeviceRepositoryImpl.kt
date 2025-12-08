@@ -1,4 +1,4 @@
-package xyz.haoziliu.restaurantsystem.corecore.data.repository
+package xyz.haoziliu.restaurantsystem.core.data.repository
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -7,7 +7,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import xyz.haoziliu.restaurantsystem.corecore.domain.repository.DeviceRepository
+import xyz.haoziliu.restaurantsystem.core.domain.repository.DeviceRepository
 import java.util.UUID
 import javax.inject.Inject
 

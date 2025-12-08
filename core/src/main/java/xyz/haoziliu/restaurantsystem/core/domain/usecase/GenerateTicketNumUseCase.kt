@@ -1,4 +1,4 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.usecase
+package xyz.haoziliu.restaurantsystem.core.domain.usecase
 
 class GenerateTicketNumUseCase {
     operator fun invoke(): String {

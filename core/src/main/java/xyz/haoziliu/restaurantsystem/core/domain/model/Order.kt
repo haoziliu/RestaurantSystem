@@ -1,4 +1,4 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.model
+package xyz.haoziliu.restaurantsystem.core.domain.model
 
 data class Order(
     val id: String = "",       // Firestore 的 UUID，用于系统唯一索引

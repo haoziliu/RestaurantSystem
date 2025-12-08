@@ -1,7 +1,7 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.repository
+package xyz.haoziliu.restaurantsystem.core.domain.repository
 
 import kotlinx.coroutines.flow.Flow
-import xyz.haoziliu.restaurantsystem.corecore.domain.model.Menu
+import xyz.haoziliu.restaurantsystem.core.domain.model.Menu
 
 interface MenuRepository {
     // 1. 核心读取：直接从本地 Room 读取，速度快，零流量。

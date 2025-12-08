@@ -1,4 +1,4 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.model
+package xyz.haoziliu.restaurantsystem.core.domain.model
 
 data class Menu(
     val categories: List<MenuCategory>,

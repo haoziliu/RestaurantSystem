@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "xyz.haoziliu.restaurantsystem.corecore"
+    namespace = "xyz.haoziliu.restaurantsystem.core"
     compileSdk {
         version = release(36)
     }

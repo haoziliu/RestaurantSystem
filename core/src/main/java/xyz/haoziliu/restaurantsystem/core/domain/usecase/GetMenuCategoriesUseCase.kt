@@ -1,9 +1,9 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.usecase
+package xyz.haoziliu.restaurantsystem.core.domain.usecase
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import xyz.haoziliu.restaurantsystem.corecore.domain.model.MenuCategory
-import xyz.haoziliu.restaurantsystem.corecore.domain.repository.MenuRepository
+import xyz.haoziliu.restaurantsystem.core.domain.model.MenuCategory
+import xyz.haoziliu.restaurantsystem.core.domain.repository.MenuRepository
 
 class GetMenuCategoriesUseCase(private val repository: MenuRepository) {
     operator fun invoke(): Flow<List<MenuCategory>> {

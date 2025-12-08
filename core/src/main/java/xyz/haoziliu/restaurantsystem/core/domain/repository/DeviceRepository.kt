@@ -1,4 +1,4 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.repository
+package xyz.haoziliu.restaurantsystem.core.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 

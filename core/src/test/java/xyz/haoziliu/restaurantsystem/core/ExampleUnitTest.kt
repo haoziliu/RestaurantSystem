@@ -1,4 +1,4 @@
-package xyz.haoziliu.restaurantsystem.corecore
+package xyz.haoziliu.restaurantsystem.core
 
 import org.junit.Test
 

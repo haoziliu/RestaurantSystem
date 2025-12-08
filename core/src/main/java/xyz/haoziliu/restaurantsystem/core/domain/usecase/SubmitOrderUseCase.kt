@@ -1,7 +1,7 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.usecase
+package xyz.haoziliu.restaurantsystem.core.domain.usecase
 
-import xyz.haoziliu.restaurantsystem.corecore.domain.model.Order
-import xyz.haoziliu.restaurantsystem.corecore.domain.repository.OrderRepository
+import xyz.haoziliu.restaurantsystem.core.domain.model.Order
+import xyz.haoziliu.restaurantsystem.core.domain.repository.OrderRepository
 
 class SubmitOrderUseCase(private val repository: OrderRepository) {
     suspend operator fun invoke(order: Order): Result<String> {

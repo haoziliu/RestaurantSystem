@@ -1,8 +1,8 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.repository
+package xyz.haoziliu.restaurantsystem.core.domain.repository
 
 import kotlinx.coroutines.flow.Flow
-import xyz.haoziliu.restaurantsystem.corecore.domain.model.Order
-import xyz.haoziliu.restaurantsystem.corecore.domain.model.OrderStatus
+import xyz.haoziliu.restaurantsystem.core.domain.model.Order
+import xyz.haoziliu.restaurantsystem.core.domain.model.OrderStatus
 
 interface OrderRepository {
     // 顾客端：只负责创建订单

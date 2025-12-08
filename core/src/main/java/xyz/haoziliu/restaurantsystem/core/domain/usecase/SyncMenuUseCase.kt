@@ -1,6 +1,6 @@
-package xyz.haoziliu.restaurantsystem.corecore.domain.usecase
+package xyz.haoziliu.restaurantsystem.core.domain.usecase
 
-import xyz.haoziliu.restaurantsystem.corecore.domain.repository.MenuRepository
+import xyz.haoziliu.restaurantsystem.core.domain.repository.MenuRepository
 
 class SyncMenuUseCase(private val repository: MenuRepository) {
     suspend operator fun invoke(): Result<Unit> {

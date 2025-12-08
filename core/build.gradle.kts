@@ -44,6 +44,7 @@ dependencies {
     api(libs.androidx.appcompat)
     api(libs.material)
     api(platform(libs.androidx.compose.bom))
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -52,6 +53,7 @@ dependencies {
 
     api(libs.room.runtime)
     api(libs.room.ktx)
+    ksp(libs.room.compiler)
     api(libs.androidx.datastore)
     implementation(libs.gson)
 }

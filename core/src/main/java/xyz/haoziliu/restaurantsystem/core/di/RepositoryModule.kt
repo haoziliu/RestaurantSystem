@@ -4,9 +4,11 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import xyz.haoziliu.restaurantsystem.core.data.repository.CartRepositoryImpl
 import xyz.haoziliu.restaurantsystem.core.data.repository.DeviceRepositoryImpl
 import xyz.haoziliu.restaurantsystem.core.data.repository.MenuRepositoryImpl
 import xyz.haoziliu.restaurantsystem.core.data.repository.OrderRepositoryImpl
+import xyz.haoziliu.restaurantsystem.core.domain.repository.CartRepository
 import xyz.haoziliu.restaurantsystem.core.domain.repository.DeviceRepository
 import xyz.haoziliu.restaurantsystem.core.domain.repository.MenuRepository
 import xyz.haoziliu.restaurantsystem.core.domain.repository.OrderRepository
@@ -27,4 +29,8 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindOrderRepository(impl: OrderRepositoryImpl): OrderRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindCartRepository(impl: CartRepositoryImpl): CartRepository
 }

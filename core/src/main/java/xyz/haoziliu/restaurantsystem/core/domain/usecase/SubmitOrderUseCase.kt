@@ -2,8 +2,9 @@ package xyz.haoziliu.restaurantsystem.core.domain.usecase
 
 import xyz.haoziliu.restaurantsystem.core.domain.model.Order
 import xyz.haoziliu.restaurantsystem.core.domain.repository.OrderRepository
+import javax.inject.Inject
 
-class SubmitOrderUseCase(private val repository: OrderRepository) {
+class SubmitOrderUseCase @Inject constructor(private val repository: OrderRepository) {
     suspend operator fun invoke(order: Order): Result<String> {
         if (order.items.isEmpty()) {
             return Result.failure(Exception("Cannot place an empty order"))

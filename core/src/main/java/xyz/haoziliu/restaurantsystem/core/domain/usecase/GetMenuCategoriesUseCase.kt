@@ -4,8 +4,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import xyz.haoziliu.restaurantsystem.core.domain.model.MenuCategory
 import xyz.haoziliu.restaurantsystem.core.domain.repository.MenuRepository
+import javax.inject.Inject
 
-class GetMenuCategoriesUseCase(private val repository: MenuRepository) {
+class GetMenuCategoriesUseCase @Inject constructor(private val repository: MenuRepository) {
     operator fun invoke(): Flow<List<MenuCategory>> {
         return repository.getMenu()
             .map { menu -> 

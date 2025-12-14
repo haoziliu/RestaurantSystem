@@ -98,6 +98,7 @@ fun MenuScreen(
                                 category.items.forEach { menuItem ->
                                     Card(
                                         modifier = Modifier
+                                            .width(192.dp)
                                             .padding(horizontal = 8.dp, vertical = 8.dp),
                                         onClick = { selectedItem = menuItem }, // ✅ 点击弹出
                                     ) {

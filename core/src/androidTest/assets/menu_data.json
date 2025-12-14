@@ -1,0 +1,863 @@
+{
+  "last_updated": 1734211800000,
+  "categories": [
+    {
+      "id": "cat_wonton",
+      "name": "🥟 抄手系列 / Soupe de Raviolis",
+      "items": [
+        {
+          "id": "item_wonton_clear",
+          "name": "清汤抄手",
+          "description": "Soupe de raviolis (pas épicée) / Original wontons soup (not spicy)",
+          "price": 10.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Clear+Soup+Wontons",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_wonton",
+              "title": "数量 / Quantity",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_qty_10", "label": "10 个 / 10 Pieces", "price_delta": 0.0 },
+                { "id": "opt_qty_15", "label": "15 个 / 15 Pieces", "price_delta": 2.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_wonton",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_wonton",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_wonton_spicy",
+          "name": "老麻抄手",
+          "description": "Soupe de raviolis (à la sauce épicée) / Wontons and Sichuan pepper in spicy soup",
+          "price": 10.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Spicy+Wontons",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_wonton",
+              "title": "数量 / Quantity",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_qty_10", "label": "10 个 / 10 Pieces", "price_delta": 0.0 },
+                { "id": "opt_qty_15", "label": "15 个 / 15 Pieces", "price_delta": 2.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_wonton",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_wonton",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_wonton_pepper",
+          "name": "小米椒抄手",
+          "description": "Soupe de raviolis (avec piment frais) / Wontons in spicy soup with fresh pepper",
+          "price": 10.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Fresh+Pepper+Wontons",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_wonton",
+              "title": "数量 / Quantity",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_qty_10", "label": "10 个 / 10 Pieces", "price_delta": 0.0 },
+                { "id": "opt_qty_15", "label": "15 个 / 15 Pieces", "price_delta": 2.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_wonton",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_wonton",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_wonton_noodle",
+          "name": "抄手面",
+          "description": "Des nouilles à la soupe de raviolis / Wontons with Chongqing noodle",
+          "price": 11.00,
+          "image_url": "https://www.miammiamcool.fr/media/images/gallery/20/big/22.jpg",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_wonton_noodle",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 2.0 }
+              ]
+            },
+             {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_wonton",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_wonton",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat_noodle",
+      "name": "🍜 重庆小面系列 / Nouilles",
+      "items": [
+        {
+          "id": "item_noodle_veg",
+          "name": "素小面",
+          "description": "Des nouilles végétariennes / Vegetable noodle",
+          "price": 8.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Veg+Noodles",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_noodle",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+             {
+              "id": "mod_extras_noodle",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_noodle",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_noodle_pork",
+          "name": "素椒杂酱小面",
+          "description": "Des nouilles au porc haché / Noodle with minced pork",
+          "price": 9.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Minced+Pork+Noodles",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_noodle",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_noodle",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_noodle",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_noodle_peas_pork",
+          "name": "豌豆杂酱小面",
+          "description": "Des nouilles au porc haché et aux pois / Noodle with minced pork and peas",
+          "price": 10.50,
+          "image_url": "https://www.miammiamcool.fr/media/images/gallery/20/big/29.jpg",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_noodle",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_noodle",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_noodle",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_noodle_beef",
+          "name": "牛肉小面",
+          "description": "Des nouilles au bœuf / Noodle with beef",
+          "price": 11.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Beef+Noodles",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_noodle",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_noodle",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_noodle",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_noodle_intestine",
+          "name": "肥肠小面",
+          "description": "Des nouilles aux tripes / Noodle with pork chitterlings",
+          "price": 11.50,
+          "image_url": "https://www.miammiamcool.fr/media/images/gallery/20/big/27.jpg",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_noodle",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_noodle",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_noodle",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_noodle_combo",
+          "name": "双拼小面",
+          "description": "Des nouilles avec 2 viandes au choix / Noodle with any 2 kinds of meat",
+          "price": 13.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Combo+Noodles",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_noodle",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_noodle",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_noodle",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat_vermicelli",
+      "name": "🌶️ 酸辣粉系列 / Vermicelles",
+      "items": [
+        {
+          "id": "item_verm_veg",
+          "name": "素粉",
+          "description": "Des vermicelles végétariens / Vegetable vermicelli",
+          "price": 8.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Veg+Vermicelli",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_verm",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_verm",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_verm",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_verm_pork",
+          "name": "杂酱粉",
+          "description": "Des vermicelles au porc haché / Vermicelli with minced pork",
+          "price": 9.50,
+          "image_url": "https://www.miammiamcool.fr/media/images/gallery/20/big/36.jpg",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_verm",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+             {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_verm",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_verm",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_verm_beef",
+          "name": "牛肉粉",
+          "description": "Des vermicelles au bœuf / Vermicelli with beef",
+          "price": 11.50,
+          "image_url": "https://www.miammiamcool.fr/media/images/gallery/20/big/24.jpg",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_verm",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+             {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_verm",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_verm",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_verm_intestine",
+          "name": "肥肠粉",
+          "description": "Des vermicelles aux tripes / Vermicelli with pork chitterlings",
+          "price": 11.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Intestine+Vermicelli",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_verm",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+             {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_verm",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_verm",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "item_verm_combo",
+          "name": "双拼粉",
+          "description": "Des vermicelles avec 2 viandes au choix / Vermicelli with any 2 kinds of meat",
+          "price": 13.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Combo+Vermicelli",
+          "is_available": true,
+          "modifier_groups": [
+            {
+              "id": "mod_size_verm",
+              "title": "规格 / Size",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_size_m", "label": "中碗 / Medium", "price_delta": 0.0 },
+                { "id": "opt_size_l", "label": "大碗 / Large", "price_delta": 1.0 }
+              ]
+            },
+             {
+              "id": "mod_spicy_level",
+              "title": "辣度选择 / Spicy Level",
+              "selection_type": "SINGLE_SELECT",
+              "is_required": true,
+              "options": [
+                { "id": "opt_spicy_0", "label": "不辣 / Non Spicy", "price_delta": 0.0 },
+                { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                { "id": "opt_spicy_3", "label": "超辣 / Super Hot", "price_delta": 0.0 }
+              ]
+            },
+            {
+              "id": "mod_extras_verm",
+              "title": "加料 / Extras",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_extra_veg", "label": "加菜 / Extra Veg", "price_delta": 1.0 }
+              ]
+            },
+            {
+              "id": "mod_prefs_verm",
+              "title": "忌口 / Preferences",
+              "selection_type": "MULTI_SELECT",
+              "is_required": false,
+              "options": [
+                { "id": "opt_no_onion", "label": "不要葱 / No Green Onion", "price_delta": 0.0 },
+                { "id": "opt_no_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat_snack",
+      "name": "🍢 小吃 / Snack",
+      "items": [
+        {
+          "id": "item_zhong_dumpling",
+          "name": "钟水饺 (6粒)",
+          "description": "Des raviolis du porc sans soupe (6p) / Zhong dumplings (soupless, 6 pcs)",
+          "price": 6.50,
+          "image_url": "https://www.miammiamcool.fr/media/images/gallery/20/big/28.jpg",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_cold_noodle",
+          "name": "凉面",
+          "description": "Des nouilles froides / Cold noodle",
+          "price": 6.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Cold+Noodles",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_cold_jelly",
+          "name": "凉粉",
+          "description": "Des vermicelles des pois (froid) / Tossed clear noodles with chili sauce (cold)",
+          "price": 4.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Jelly+Noodles",
+          "is_available": true,
+          "modifier_groups": []
+        }
+      ]
+    },
+    {
+      "id": "cat_drink",
+      "name": "🥤 饮料 / Boissons",
+      "items": [
+        {
+          "id": "item_beer",
+          "name": "青岛啤酒",
+          "description": "Bière / Tsingtao beer (330ml)",
+          "price": 3.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Tsingtao",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_coke",
+          "name": "可乐",
+          "description": "Coca (zéro / original) / Cola (330ml)",
+          "price": 3.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Coke",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_water",
+          "name": "依云/波多",
+          "description": "Evian / Badoit (500ml)",
+          "price": 3.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Water",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_juice",
+          "name": "果汁",
+          "description": "Jus de fruits / Fruit juice (250ml) - Apple, Mango, Orange, Pineapple",
+          "price": 2.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Juice",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_aloe",
+          "name": "芦荟汁",
+          "description": "Jus d'aloés / Aloe juice (500ml)",
+          "price": 3.50,
+          "image_url": "https://fakeimg.pl/400x400/?text=Aloe",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_herbal_tea",
+          "name": "王老吉",
+          "description": "Herb-tea / Chinese herbal tea (310ml)",
+          "price": 3.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Herbal+Tea",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_coconut",
+          "name": "椰奶",
+          "description": "Jus de coco / Coconut milk (310ml)",
+          "price": 3.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Coconut+Milk",
+          "is_available": true,
+          "modifier_groups": []
+        },
+        {
+          "id": "item_soy",
+          "name": "豆奶",
+          "description": "Jus de soja / Soy milk (300ml)",
+          "price": 3.00,
+          "image_url": "https://fakeimg.pl/400x400/?text=Soy+Milk",
+          "is_available": true,
+          "modifier_groups": []
+        }
+      ]
+    }
+  ]
+}

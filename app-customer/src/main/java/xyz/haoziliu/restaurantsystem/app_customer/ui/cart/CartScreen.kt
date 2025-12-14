@@ -59,7 +59,7 @@ fun CartScreen(
                     if (uiState.isSubmitting) {
                         CircularProgressIndicator(color = Color.White, modifier = Modifier.size(24.dp))
                     } else {
-                        Text("去结算 - ¥${String.format("%.2f", uiState.total)}", style = MaterialTheme.typography.titleLarge)
+                        Text("去结算 - €${String.format("%.2f", uiState.total)}", style = MaterialTheme.typography.titleLarge)
                     }
                 }
             }
@@ -112,7 +112,7 @@ fun CartItemRow(item: xyz.haoziliu.restaurantsystem.core.domain.model.OrderItem,
                     color = Color.Gray
                 )
             }
-            Text("¥${item.itemTotal}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
+            Text("€${item.itemTotal}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
         }
         
         IconButton(onClick = onRemove) {

@@ -21,6 +21,9 @@ fun ProductDetailSheet(
     onDismiss: () -> Unit,
     onAddToCart: (List<OrderOption>) -> Unit
 ) {
+    val sheetState = rememberModalBottomSheetState(
+        skipPartiallyExpanded = true
+    )
     // 状态：记录用户选了哪些 Options
     // Map<GroupId, SelectedOptionId> (对于单选)
     // Map<GroupId, Set<SelectedOptionId>> (对于多选)
@@ -30,7 +33,7 @@ fun ProductDetailSheet(
     // 计算当前总价 (基础价 + 选项加价)
     val currentTotalPrice = menuItem.price + selectedOptions.sumOf { it.priceDelta }
 
-    ModalBottomSheet(onDismissRequest = onDismiss) {
+    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheetState) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -74,7 +77,7 @@ fun ProductDetailSheet(
                 onClick = { onAddToCart(selectedOptions.toList()) },
                 modifier = Modifier.fillMaxWidth().height(50.dp)
             ) {
-                Text("加入购物车 - ¥${String.format("%.2f", currentTotalPrice)}")
+                Text("加入购物车 - €${String.format("%.2f", currentTotalPrice)}")
             }
             Spacer(modifier = Modifier.height(24.dp))
         }
@@ -120,7 +123,7 @@ fun ModifierGroupSection(
                 }
                 Text(text = option.label, modifier = Modifier.weight(1f))
                 if (option.priceDelta > 0) {
-                    Text(text = "+¥${option.priceDelta}", color = MaterialTheme.colorScheme.primary)
+                    Text(text = "+€${option.priceDelta}", color = MaterialTheme.colorScheme.primary)
                 }
             }
         }

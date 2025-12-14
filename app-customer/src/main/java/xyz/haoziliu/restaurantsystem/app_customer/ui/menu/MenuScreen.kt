@@ -108,7 +108,7 @@ fun MenuScreen(
                                                 contentDescription = menuItem.name,
                                             )
                                             Text(menuItem.name, style = MaterialTheme.typography.titleMedium)
-                                            Text("¥${menuItem.price}", style = MaterialTheme.typography.bodyLarge)
+                                            Text("€${menuItem.price}", style = MaterialTheme.typography.bodyLarge)
                                         }
                                     }
                                 }

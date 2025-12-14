@@ -1,6 +1,7 @@
 package xyz.haoziliu.restaurantsystem.core.data.remote.model
 
 import com.google.firebase.firestore.PropertyName
+import com.google.gson.annotations.SerializedName
 import xyz.haoziliu.restaurantsystem.core.data.local.model.MenuCachedEntity
 import xyz.haoziliu.restaurantsystem.core.domain.model.MenuCategory
 import xyz.haoziliu.restaurantsystem.core.domain.model.MenuItem
@@ -9,10 +10,11 @@ import xyz.haoziliu.restaurantsystem.core.domain.model.MenuModifierOption
 import xyz.haoziliu.restaurantsystem.core.domain.model.ModifierSelectionType
 
 data class MenuDto(
-    @get:PropertyName("categories")
     var categories: List<CategoryDto> = emptyList(),
-    
+
+    @SerializedName("last_updated")
     @get:PropertyName("last_updated")
+    @set:PropertyName("last_updated")
     var lastUpdated: Long = 0
 )
 
@@ -27,20 +29,30 @@ data class MenuItemDto(
     var name: String = "",
     var description: String? = null,
     var price: Double = 0.0,
+    @SerializedName("image_url")
     @get:PropertyName("image_url")
+    @set:PropertyName("image_url")
     var imageUrl: String? = null,
+    @SerializedName("is_available")
     @get:PropertyName("is_available")
+    @set:PropertyName("is_available")
     var isAvailable: Boolean = true,
+    @SerializedName("modifier_groups")
     @get:PropertyName("modifier_groups")
+    @set:PropertyName("modifier_groups")
     var modifierGroups: List<ModifierGroupDto> = emptyList()
 )
 
 data class ModifierGroupDto(
     var id: String = "",
     var title: String = "",
+    @SerializedName("selection_type")
     @get:PropertyName("selection_type")
+    @set:PropertyName("selection_type")
     var selectionType: String = "SINGLE_SELECT", // Firestore 存 String，代码里转 Enum
+    @SerializedName("is_required")
     @get:PropertyName("is_required")
+    @set:PropertyName("is_required")
     var isRequired: Boolean = false,
     var options: List<ModifierOptionDto> = emptyList()
 )
@@ -48,7 +60,9 @@ data class ModifierGroupDto(
 data class ModifierOptionDto(
     var id: String = "",
     var label: String = "",
+    @SerializedName("price_delta")
     @get:PropertyName("price_delta")
+    @set:PropertyName("price_delta")
     var priceDelta: Double = 0.0
 )
 

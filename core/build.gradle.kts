@@ -77,4 +77,5 @@ dependencies {
     ksp(libs.room.compiler)
     api(libs.androidx.datastore)
     implementation(libs.gson)
+    api(libs.coil)
 }

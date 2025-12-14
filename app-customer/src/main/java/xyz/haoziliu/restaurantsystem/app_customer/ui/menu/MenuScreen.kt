@@ -4,10 +4,13 @@ import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
@@ -30,6 +33,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
+import coil.compose.AsyncImage
 import xyz.haoziliu.restaurantsystem.core.domain.model.MenuItem
 
 @Composable
@@ -82,16 +86,31 @@ fun MenuScreen(
                                 color = MaterialTheme.colorScheme.primary
                             )
                         }
-                        items(category.items) { menuItem ->
-                            Card(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(horizontal = 16.dp, vertical = 8.dp),
-                                onClick = { selectedItem = menuItem }, // ✅ 点击弹出
+                        item {
+                            FlowRow(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(
+                                    8.dp,
+                                    Alignment.Start
+                                ),
+                                verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
                             ) {
-                                Column(modifier = Modifier.padding(16.dp)) {
-                                    Text(menuItem.name, style = MaterialTheme.typography.titleMedium)
-                                    Text("¥${menuItem.price}", style = MaterialTheme.typography.bodyLarge)
+                                category.items.forEach { menuItem ->
+                                    Card(
+                                        modifier = Modifier
+                                            .padding(horizontal = 8.dp, vertical = 8.dp),
+                                        onClick = { selectedItem = menuItem }, // ✅ 点击弹出
+                                    ) {
+                                        Column(modifier = Modifier.padding(8.dp)) {
+                                            AsyncImage(
+                                                model = menuItem.imageUrl?.ifBlank { null },
+                                                modifier = Modifier.size(192.dp),
+                                                contentDescription = menuItem.name,
+                                            )
+                                            Text(menuItem.name, style = MaterialTheme.typography.titleMedium)
+                                            Text("¥${menuItem.price}", style = MaterialTheme.typography.bodyLarge)
+                                        }
+                                    }
                                 }
                             }
                         }

@@ -17,77 +17,68 @@ import xyz.haoziliu.restaurantsystem.core.data.remote.model.MenuDto
 @RunWith(AndroidJUnit4::class)
 class MenuSeederTest {
 
-    // 1. 这里填入你的菜单 JSON 数据
-    // 这是一个包含两个分类、几个菜品和规格的完整示例
     private val json = """
     {
-      "last_updated": 1709876543210,
+      "last_updated": ${System.currentTimeMillis()},
       "categories": [
         {
-          "id": "cat_1",
-          "name": "🔥 热门推荐",
+          "id": "cat_main_01",
+          "name": "🍜 招牌面食 / Noodles",
           "items": [
             {
-              "id": "item_101",
-              "name": "招牌安格斯牛肉堡",
-              "description": "100% 纯进口安格斯牛肉，搭配特制秘方酱汁。",
-              "price": 48.0,
-              "image_url": "https://fakeimg.pl/400x400/?text=Burger", 
+              "id": "item_beef_noodle",
+              "name": "私房红烧牛肉面",
+              "description": "秘制汤底，大块牛肉，劲道面条。 (Chef's Special Beef Noodles)",
+              "price": 12.80,
+              "image_url": "https://www.miammiamcool.fr/media/images/gallery/20/big/21.jpg", 
               "is_available": true,
               "modifier_groups": [
                 {
-                  "id": "mod_group_1",
-                  "title": "口味选择",
+                  "id": "mod_spicy_level",
+                  "title": "辣度选择 / Spicy Level",
                   "selection_type": "SINGLE_SELECT",
                   "is_required": true,
                   "options": [
-                    { "id": "opt_1_1", "label": "原味", "price_delta": 0.0 },
-                    { "id": "opt_1_2", "label": "黑胡椒", "price_delta": 0.0 },
-                    { "id": "opt_1_3", "label": "变态辣", "price_delta": 0.0 }
+                    { "id": "opt_spicy_0", "label": "不辣 / No Spicy", "price_delta": 0.0 },
+                    { "id": "opt_spicy_1", "label": "微辣 / Mild", "price_delta": 0.0 },
+                    { "id": "opt_spicy_2", "label": "中辣 / Medium", "price_delta": 0.0 },
+                    { "id": "opt_spicy_3", "label": "大辣 / Hot", "price_delta": 0.0 }
                   ]
                 },
                 {
-                  "id": "mod_group_2",
-                  "title": "加料",
+                  "id": "mod_extras",
+                  "title": "加料 / Extras",
                   "selection_type": "MULTI_SELECT",
                   "is_required": false,
                   "options": [
-                    { "id": "opt_2_1", "label": "加芝士片", "price_delta": 3.0 },
-                    { "id": "opt_2_2", "label": "加培根", "price_delta": 5.0 }
+                    { "id": "opt_egg", "label": "卤蛋 / Marinated Egg", "price_delta": 1.50 },
+                    { "id": "opt_meat", "label": "加肉 / Extra Beef", "price_delta": 4.00 },
+                    { "id": "opt_coriander", "label": "不要香菜 / No Coriander", "price_delta": 0.0 }
                   ]
                 }
               ]
             },
             {
-              "id": "item_102",
-              "name": "黄金脆皮炸鸡 (全翅)",
-              "description": "外酥里嫩，鲜嫩多汁。",
-              "price": 28.5,
-              "image_url": "https://fakeimg.pl/400x400/?text=Chicken",
+              "id": "item_dumpling",
+              "name": "手工水饺 (12个)",
+              "description": "猪肉白菜馅，皮薄馅大。",
+              "price": 9.50,
+              "image_url": "https://fakeimg.pl/400x400/?text=Dumplings",
               "is_available": true,
               "modifier_groups": []
             }
           ]
         },
         {
-          "id": "cat_2",
-          "name": "🥤 快乐肥宅水",
+          "id": "cat_drinks",
+          "name": "🥤 饮料 / Drinks",
           "items": [
             {
-              "id": "item_201",
-              "name": "冰镇可乐",
-              "description": "加冰才好喝。",
-              "price": 8.0,
+              "id": "item_coke",
+              "name": "可口可乐",
+              "description": "330ml 罐装",
+              "price": 2.50,
               "image_url": "https://fakeimg.pl/400x400/?text=Coke",
-              "is_available": true,
-              "modifier_groups": []
-            },
-            {
-              "id": "item_202",
-              "name": "鲜榨橙汁",
-              "description": "新鲜橙子现榨，无添加。",
-              "price": 18.0,
-              "image_url": "https://fakeimg.pl/400x400/?text=Juice",
               "is_available": true,
               "modifier_groups": []
             }
@@ -98,7 +89,7 @@ class MenuSeederTest {
     """.trimIndent()
 
     @Test
-    @Ignore("运维脚本：仅在需要重置菜单时手动移除此注解并运行") // ✅ 加这把锁
+//    @Ignore("运维脚本：仅在需要重置菜单时手动移除此注解并运行") // ✅ 加这把锁
     fun seedMenuDataToFirestore() = runBlocking {
         // 0. 初始化 Firebase (防止测试环境下未自动初始化)
         val context = InstrumentationRegistry.getInstrumentation().targetContext

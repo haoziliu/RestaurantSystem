@@ -1,6 +1,7 @@
 package xyz.haoziliu.restaurantsystem.app_customer.ui.menu
 
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,9 +14,16 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Sync
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,7 +35,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
@@ -50,19 +60,34 @@ fun MenuScreen(
         Column() {
             // 顶部栏
             Row(
-                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text("点单菜单", style = MaterialTheme.typography.headlineMedium)
-
-                Button(onClick = onCartClicked) {
-                    Text("购物车")
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("点单菜单", style = MaterialTheme.typography.headlineMedium)
+                    // 调试用：同步按钮
+                    IconButton(onClick = { viewModel.syncMenu() }) {
+                        Icon(Icons.Default.Sync, contentDescription = "同步菜单", tint = Color.Gray)
+                    }
                 }
 
-                // 调试用：同步按钮
-                Button(onClick = { viewModel.syncMenu() }) {
-                    Text("同步菜单")
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (uiState.itemCountInCart != 0) {
+                        Text(
+                            text = "${uiState.itemCountInCart}",
+                            modifier = Modifier
+                                .size(24.dp)
+                                .background(Color.Red, CircleShape),
+                            textAlign = TextAlign.Center,
+                            color = Color.White
+                        )
+                    }
+                    IconButton(onClick = onCartClicked) {
+                        Icon(Icons.Default.ShoppingCart, contentDescription = "已选菜品")
+                    }
                 }
             }
 
@@ -82,7 +107,9 @@ fun MenuScreen(
                             Text(
                                 text = category.name,
                                 style = MaterialTheme.typography.titleLarge,
-                                modifier = Modifier.padding(16.dp).fillMaxWidth(),
+                                modifier = Modifier
+                                    .padding(16.dp)
+                                    .fillMaxWidth(),
                                 color = MaterialTheme.colorScheme.primary
                             )
                         }
@@ -93,7 +120,10 @@ fun MenuScreen(
                                     8.dp,
                                     Alignment.Start
                                 ),
-                                verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
+                                verticalArrangement = Arrangement.spacedBy(
+                                    8.dp,
+                                    Alignment.CenterVertically
+                                ),
                             ) {
                                 category.items.forEach { menuItem ->
                                     Card(
@@ -108,8 +138,14 @@ fun MenuScreen(
                                                 modifier = Modifier.size(192.dp),
                                                 contentDescription = menuItem.name,
                                             )
-                                            Text(menuItem.name, style = MaterialTheme.typography.titleMedium)
-                                            Text("€${menuItem.price}", style = MaterialTheme.typography.bodyLarge)
+                                            Text(
+                                                menuItem.name,
+                                                style = MaterialTheme.typography.titleMedium
+                                            )
+                                            Text(
+                                                "€${menuItem.price}",
+                                                style = MaterialTheme.typography.bodyLarge
+                                            )
                                         }
                                     }
                                 }

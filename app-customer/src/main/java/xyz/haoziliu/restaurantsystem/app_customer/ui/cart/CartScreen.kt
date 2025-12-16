@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
@@ -33,6 +34,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 @Composable
 fun CartScreen(
     onOrderSuccess: (String) -> Unit, // 回调：跳转到成功页
+    onBack: () -> Unit,
     viewModel: CartViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -45,36 +47,22 @@ fun CartScreen(
         }
     }
 
-    Scaffold(
-        bottomBar = {
-            if (uiState.items.isNotEmpty()) {
-                Button(
-                    onClick = { viewModel.submitOrder() },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp)
-                        .height(56.dp),
-                    enabled = !uiState.isSubmitting
-                ) {
-                    if (uiState.isSubmitting) {
-                        CircularProgressIndicator(color = Color.White, modifier = Modifier.size(24.dp))
-                    } else {
-                        Text("去结算 - €${String.format("%.2f", uiState.total)}", style = MaterialTheme.typography.titleLarge)
-                    }
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.weight(1f)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                IconButton(onClick = onBack) {
+                    Icon(Icons.AutoMirrored.Default.ArrowBack, contentDescription = "Back")
                 }
+                Text(
+                    "已选菜品",
+                    style = MaterialTheme.typography.headlineMedium,
+                    modifier = Modifier.padding(16.dp)
+                )
             }
-        }
-    ) { padding ->
-        Column(modifier = Modifier.padding(padding).fillMaxSize()) {
-            Text(
-                "购物车",
-                style = MaterialTheme.typography.headlineMedium,
-                modifier = Modifier.padding(16.dp)
-            )
 
             if (uiState.items.isEmpty()) {
                 Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text("购物车是空的", color = Color.Gray)
+                    Text("尚未选择任何菜品", color = Color.Gray)
                 }
             } else {
                 LazyColumn {
@@ -93,13 +81,36 @@ fun CartScreen(
                 Text(err, color = Color.Red, modifier = Modifier.padding(16.dp))
             }
         }
+
+        if (uiState.items.isNotEmpty()) {
+            Button(
+                onClick = { viewModel.submitOrder() },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+                    .height(56.dp),
+                enabled = !uiState.isSubmitting
+            ) {
+                if (uiState.isSubmitting) {
+                    CircularProgressIndicator(color = Color.White, modifier = Modifier.size(24.dp))
+                } else {
+                    Text("确认下单 - €${String.format("%.2f", uiState.total)}", style = MaterialTheme.typography.titleLarge)
+                }
+            }
+        }
     }
+
 }
 
 @Composable
-fun CartItemRow(item: xyz.haoziliu.restaurantsystem.core.domain.model.OrderItem, onRemove: () -> Unit) {
+fun CartItemRow(
+    item: xyz.haoziliu.restaurantsystem.core.domain.model.OrderItem,
+    onRemove: () -> Unit
+) {
     Row(
-        modifier = Modifier.fillMaxWidth().padding(16.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column(modifier = Modifier.weight(1f)) {
@@ -112,9 +123,13 @@ fun CartItemRow(item: xyz.haoziliu.restaurantsystem.core.domain.model.OrderItem,
                     color = Color.Gray
                 )
             }
-            Text("€${item.itemTotal}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary)
+            Text(
+                "€${item.itemTotal}",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.primary
+            )
         }
-        
+
         IconButton(onClick = onRemove) {
             Icon(Icons.Default.Delete, contentDescription = "删除", tint = Color.Gray)
         }

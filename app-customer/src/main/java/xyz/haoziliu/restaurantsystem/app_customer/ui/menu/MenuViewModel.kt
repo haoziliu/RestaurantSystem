@@ -7,13 +7,14 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import xyz.haoziliu.restaurantsystem.core.domain.model.MenuItem
 import xyz.haoziliu.restaurantsystem.core.domain.model.OrderOption
 import xyz.haoziliu.restaurantsystem.core.domain.usecase.AddItemToCartUseCase
 import xyz.haoziliu.restaurantsystem.core.domain.usecase.GetMenuCategoriesUseCase
+import xyz.haoziliu.restaurantsystem.core.domain.usecase.ObserveCartUseCase
 import xyz.haoziliu.restaurantsystem.core.domain.usecase.SyncMenuUseCase
 import javax.inject.Inject
 
@@ -21,15 +22,19 @@ import javax.inject.Inject
 @HiltViewModel
 class MenuViewModel @Inject constructor(
     getMenuCategoriesUseCase: GetMenuCategoriesUseCase,
+    observeCartUseCase: ObserveCartUseCase,
     private val addItemToCartUseCase: AddItemToCartUseCase,
     private val syncMenuUseCase: SyncMenuUseCase
 ) : ViewModel() {
 
     // 实时监听数据库变化，转换为 UI State
-    val uiState: StateFlow<MenuUiState> = getMenuCategoriesUseCase()
-        .map { categories ->
-            MenuUiState(categories = categories, isLoading = false)
-        }
+
+    val uiState: StateFlow<MenuUiState> = combine(
+        getMenuCategoriesUseCase(),
+        observeCartUseCase()
+    ) { categories, itemsList ->
+        MenuUiState(categories = categories, isLoading = false, itemCountInCart = itemsList.size)
+    }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),

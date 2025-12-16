@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import xyz.haoziliu.restaurantsystem.core.domain.model.MenuItem
 import xyz.haoziliu.restaurantsystem.core.domain.model.MenuModifierGroup
 import xyz.haoziliu.restaurantsystem.core.domain.model.ModifierSelectionType
@@ -21,6 +22,7 @@ fun ProductDetailSheet(
     onDismiss: () -> Unit,
     onAddToCart: (List<OrderOption>) -> Unit
 ) {
+    val lifecycleOwner = LocalLifecycleOwner.current
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true
     )
@@ -29,6 +31,17 @@ fun ProductDetailSheet(
     // Map<GroupId, Set<SelectedOptionId>> (对于多选)
     // 为了简单，我们用一个 MutableStateList 存所有选中的 Option 对象
     val selectedOptions = remember { mutableStateListOf<OrderOption>() }
+
+    LaunchedEffect(lifecycleOwner) {
+        for (group in menuItem.modifierGroups) {
+            if (group.selectionType == ModifierSelectionType.SINGLE_SELECT) {
+                group.options.firstOrNull()?.let { option ->
+                    val orderOption = OrderOption(option.id, option.label, option.priceDelta)
+                    selectedOptions.add(orderOption)
+                }
+            }
+        }
+    }
 
     // 计算当前总价 (基础价 + 选项加价)
     val currentTotalPrice = menuItem.price + selectedOptions.sumOf { it.priceDelta }
@@ -75,7 +88,9 @@ fun ProductDetailSheet(
             // 底部按钮
             Button(
                 onClick = { onAddToCart(selectedOptions.toList()) },
-                modifier = Modifier.fillMaxWidth().height(50.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
             ) {
                 Text("加入购物车 - €${String.format("%.2f", currentTotalPrice)}")
             }
@@ -102,7 +117,9 @@ fun ModifierGroupSection(
             
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp)
             ) {
                 if (group.selectionType == ModifierSelectionType.SINGLE_SELECT) {
                     RadioButton(

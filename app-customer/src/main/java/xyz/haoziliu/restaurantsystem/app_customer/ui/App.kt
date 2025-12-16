@@ -49,7 +49,8 @@ fun App() {
                              // 弹出回退栈，防止用户按返回键回到购物车
                              popUpTo(Screen.Menu.route) { inclusive = false }
                          }
-                     }
+                     },
+                     onBack = { navController.popBackStack() }
                  )
              }
 

@@ -9,13 +9,13 @@ plugins {
 }
 
 android {
-    namespace = "xyz.haoziliu.restaurantsystem.app_customer"
+    namespace = "com.haoziliu.restaurantsystem.app_customer"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "xyz.haoziliu.restaurantsystem.app_customer"
+        applicationId = "com.haoziliu.restaurantsystem.app_customer"
         minSdk = 28
         targetSdk = 36
         versionCode = 1

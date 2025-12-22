@@ -15,7 +15,7 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    namespace = "xyz.haoziliu.restaurantsystem.core"
+    namespace = "com.haoziliu.restaurantsystem.core"
     compileSdk {
         version = release(36)
     }
